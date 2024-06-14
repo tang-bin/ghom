@@ -1,0 +1,180 @@
+@import url("../var.less");
+
+.home {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+
+    &.mobileHome {
+        position: relative;
+        height: fit-content;
+
+        .taglineBody {
+            width: 100%;
+            max-width: unset;
+
+            .taglineContainer {
+                width: 100%;
+                max-width: unset;
+
+                .taglineSinglePage,
+                b {
+                    font-size: 1.4rem !important;
+                }
+            }
+        }
+    }
+}
+
+.taglineFooter {
+    display: flex;
+    width: 90%;
+    max-width: 100rem;
+    flex-direction: column;
+
+    .footerProgressBar {
+        display: flex;
+        width: 100%;
+        height: 12px;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 15px;
+        padding: 10px 0;
+
+        .footerIndicator {
+            display: flex;
+            flex: 1 2 0;
+            height: 5px;
+            background-color: var(--gold);
+            transition: all 0.23s ease-in-out;
+            cursor: pointer;
+            opacity: 0.4;
+            position: relative;
+
+            &:hover {
+                opacity: 1;
+                height: 12px;
+            }
+
+            &.active {
+                opacity: 0.7;
+            }
+
+            .indicatorSlider {
+                position: absolute;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                width: 20%;
+                background-color: var(--body-ft-hover);
+                transition: width 0.1s linear;
+            }
+        }
+    }
+
+    .footerExtraBar {
+        font-weight: 600;
+        font-style: italic;
+        cursor: pointer;
+        color: var(--body-ft-link);
+        width: fit-content;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+
+        .footerExtraIcon {
+            width: 1rem;
+            height: 1rem;
+        }
+
+        &:hover {
+            text-decoration: underline;
+            color: var(--body-ft-link-hover);
+        }
+    }
+}
+
+.taglineBody {
+    width: 90%;
+    max-width: 100rem;
+
+    .taglineContainer {
+        display: flex;
+        width: fit-content;
+        max-width: min(80vw, 1100px);
+        flex-wrap: wrap;
+        flex-direction: column;
+        perspective: 100vh;
+
+        .taglineRow {
+            display: flex;
+            flex-wrap: wrap;
+            perspective: 100vh;
+
+            .taglineBlock {
+                display: inline-flex;
+                padding: 3px 8px;
+                margin: 2px;
+                color: var(--body-ft);
+                justify-content: center;
+                align-items: center;
+                cursor: default;
+                transition: all 0.23s;
+                font-size: 4.8rem;
+                line-height: 4.8rem;
+                font-weight: 700;
+
+                &.invisible {
+                    opacity: 0;
+                    transform: translateZ(-50rem);
+                }
+
+                &.highlight {
+                    color: var(--body-ft-highlight);
+                    font-weight: 900;
+                    transform: translate(0, -0.2rem) rotate(-2deg);
+                }
+
+                &.link {
+                    cursor: pointer;
+                    color: var(--body-ft-link);
+                    text-decoration: underline;
+
+                    &:hover {
+                        transform: scale(1.05);
+                        color: var(--body-ft-link-hover);
+                    }
+                }
+            }
+        }
+
+        .taglineSinglePage {
+            font-size: 2rem;
+            border-bottom: 1px solid var(--gold);
+            margin-bottom: 1rem;
+            padding: 2rem 0;
+
+            b {
+                font-size: 2.1rem;
+                color: var(--dark-gold);
+            }
+
+            a {
+                color: var(--body-ft-link);
+                text-decoration: underline;
+                font-weight: 700;
+
+                &:hover {
+                    color: var(--body-ft-link-hover);
+                }
+            }
+
+            p {
+                margin: 1rem 0;
+            }
+        }
+    }
+}

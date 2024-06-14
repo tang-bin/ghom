@@ -1,0 +1,9 @@
+{
+    "name": "zimo",
+    "$schema": "../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "application",
+    "sourceRoot": "apps/zimo/src",
+    "tags": [],
+    "// targets": "to see all targets run: nx show project zimo --web",
+    "targets": {}
+}

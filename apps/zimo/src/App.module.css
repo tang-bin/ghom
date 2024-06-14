@@ -1,0 +1,30 @@
+.image {
+    background: bisque;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+}
+
+.aboutme {
+    width: 200px;
+    background: bisque;
+}
+.rectangle {
+    width: 40%;
+    height: 2000px;
+    background-color: rgb(220, 220, 50);
+    border: 2px solid rgb(22, 22, 5);
+    margin-left: 30%;
+    position: absolute;
+}
+.text {
+    position: absolute;
+    top: 700px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(0, 0, 0);
+    font-size: 18px;
+    width: 30%;
+    text-align: center;
+}

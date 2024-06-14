@@ -1,0 +1,61 @@
+@beige: #ddd0c8;
+@turquoise: #178582;
+@dark-turquoise: #0f5e5b;
+@gold: #bfa181; // #deb992;
+@dark-gold: #9d8161;
+@light-gold: #e0c8b6;
+@amber: #da9738;
+
+@dark-grey: #323232;
+@dark-blue: #0a1828;
+
+@light-black: #262626;
+@dark-black: #191919;
+
+@light-white: #f1f1f1;
+
+:root {
+    --gold: @gold;
+    --dark-gold: @dark-gold;
+    --light-gold: @light-gold;
+}
+
+.theme {
+    --body-bg: @beige;
+    --body-ft: @dark-grey;
+    --body-ft-hover: @turquoise;
+
+    --body-ft-highlight: @dark-gold;
+
+    --body-ft-link: @dark-turquoise;
+    --body-ft-link-hover: @turquoise;
+
+    --banner-bg: @dark-grey;
+    --on-banner-bg-start: lighten(@dark-grey, 10%);
+    --on-banner-bg-end: darken(@dark-grey, 5%);
+    --on-banner-bg-gradient: linear-gradient(110deg, var(--on-banner-bg-start), var(--on-banner-bg-end));
+
+    --box-bg: fade(@dark-grey, 10%);
+    --box-header: fade(@dark-grey, 5%);
+    --box-bg-end: darken(@dark-grey, 5%);
+    --box-bg-gradient: linear-gradient(110deg, var(--box-bg-start), var(--box-bg-end));
+
+    --box-bg-inner: fade(@beige, 10%);
+    --box-header-bg: @dark-black;
+    --box-ft: @light-white;
+    --box-ft-inner: @beige;
+
+    --shadow: 0 0 3px 3px fade(black, 40%);
+    --shadow-hover: 0 0 15px 8px fade(black, 30%);
+    --shadow-hover-inner: 0 0 2px @beige;
+
+    --box-shadow: 0 0 5px 5px fade(black, 10%);
+    --box-shadow-hover: 0 0 10px 10px fade(black, 8%);
+
+    --tick-color: @gold;
+}
+
+@media (prefers-color-scheme: dark) {
+    /* :root {
+        } */
+}

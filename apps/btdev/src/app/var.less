@@ -1,0 +1,10 @@
+@side-width: 25vw;
+@side-width-ext: 95vw;
+@tile-size: 5rem;
+@border: 0.3rem;
+
+@sm-rate: 0.35;
+
+.alt-size(@rate: 1, @rotation: 45deg) {
+    transform: translate(-@tile-size, -@tile-size) scale(@rate) rotate(@rotation);
+}

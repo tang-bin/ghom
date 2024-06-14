@@ -1,0 +1,212 @@
+@import url(../var.less);
+@import url(../../styles/var.less);
+
+.menu {
+    --tile-size: @tile-size;
+    --tile-sm-rate: @sm-rate;
+
+    display: flex;
+    position: absolute;
+    left: @side-width;
+    top: 50%;
+
+    &:hover {
+        .bg {
+            opacity: 1;
+        }
+    }
+
+    &.onMobile {
+        position: fixed;
+        top: 7rem;
+        left: 50%;
+    }
+}
+
+.diamondTile {
+    display: flex;
+    position: absolute;
+    cursor: pointer;
+
+    .tileLabelBg {
+        transition: width 0.23s ease-in-out;
+        width: 0;
+        position: absolute;
+        top: -1px;
+        right: 0;
+        border-bottom: 2px solid var(--gold);
+        display: flex;
+    }
+
+    .tileLabel {
+        position: absolute;
+        right: @tile-size * 1.67;
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--box-ft);
+        white-space: nowrap;
+
+        bottom: -5px;
+        opacity: 0;
+        transition: bottom 0.23s ease-in-out, opacity 0.23s ease-in-out;
+
+        &.smSize {
+            font-size: 1.5rem;
+            right: @tile-size * 0.67;
+        }
+    }
+
+    .tileInfo {
+        position: absolute;
+        right: @tile-size * 1.67;
+        font-size: 1.3rem;
+        top: 3px;
+        font-weight: 700;
+        color: var(--box-ft);
+        white-space: nowrap;
+        font-style: italic;
+
+        right: 8rem;
+        top: -5px;
+        opacity: 0;
+        transition: top 0.23s ease-in-out, opacity 0.23s ease-in-out;
+
+        &.smSize {
+            font-size: 1rem;
+            right: @tile-size * 0.67;
+        }
+    }
+
+    .tileBody {
+        .alt-size(1);
+        .abs-full();
+
+        height: 2 * @tile-size;
+        width: 2 * @tile-size;
+        perspective: 100vh;
+
+        &.smSize {
+            .alt-size(@sm-rate);
+        }
+
+        .tileBg {
+            .abs-full();
+
+            border-radius: @tile-size;
+            transition: all 0.23s ease-in-out;
+            box-shadow: var(--shadow);
+            background: linear-gradient(110deg, var(--on-banner-bg-start), var(--on-banner-bg-end));
+        }
+
+        .tileFt {
+            .abs-full(@border);
+
+            transition: all 0.23s ease-in-out;
+            overflow: hidden;
+            background-color: var(--box-bg-inner);
+            border-radius: @tile-size;
+
+            .tileContainer {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                transform: rotate(-45deg);
+                transition: all 0.23s ease-in-out;
+
+                .tileImg {
+                    transition: all 0.23s ease-in-out;
+                    object-fit: contain;
+                    fill: var(--gold);
+                    width: 100%;
+                    height: 100%;
+
+                    &.smSize {
+                        transform: scale(0.4);
+                    }
+                }
+
+                .tileIcon {
+                    transform: scale(0.4);
+                    transition: all 0.23s ease-in-out;
+                    fill: var(--gold);
+                    width: 100%; // for Safari
+                    height: 100%; // for Safari
+                }
+            }
+        }
+    }
+
+    &:hover {
+        .tileLabelBg {
+            width: @side-width - 5rem !important;
+        }
+
+        .tileLabel {
+            opacity: 1;
+            bottom: 3px !important;
+        }
+
+        .tileInfo {
+            opacity: 1;
+            top: 3px !important;
+        }
+
+        .tileBg {
+            border-radius: 0 !important;
+            transform: scale(1.1) !important;
+        }
+
+        .tileFt {
+            border-radius: 0 !important;
+            transform: scale(1.05) !important;
+
+            .tileContainer {
+                transform: rotate(-45deg) scale(1.42);
+
+                .tileIcon {
+                    transform: rotate(10deg) scale(0.6) !important;
+                    fill: var(--body-ft-hover) !important;
+                }
+            }
+        }
+    }
+
+    &.active {
+        .tileBg {
+            border-radius: 0 !important;
+            transform: scale(1);
+        }
+
+        .tileLabelBg {
+            width: @side-width - 1rem;
+        }
+
+        .tileLabel {
+            opacity: 1;
+            bottom: 10px;
+        }
+
+        .tileInfo {
+            opacity: 1;
+            top: 10px;
+        }
+
+        .tileFt {
+            border-radius: 0;
+            transform: scale(1);
+
+            .tileContainer {
+                transform: rotate(-45deg) scale(1.42);
+
+                .tileIcon {
+                    transform: scale(0.5);
+                    fill: var(--body-ft-hover);
+                }
+            }
+        }
+    }
+}

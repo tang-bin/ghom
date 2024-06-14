@@ -1,0 +1,49 @@
+@import url("./var.less");
+
+.mainBody {
+    position: absolute;
+    left: calc(@side-width + 10rem);
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+    padding: 2rem 10rem 2rem 0;
+    overflow: auto;
+
+    &.mobileMainBody {
+        left: 0;
+        padding: 12rem 1rem 2rem 1rem;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+}
+
+.sidebar {
+    position: absolute;
+    left: 0;
+    height: 100vh;
+    right: 100vw - @side-width;
+    background-color: var(--banner-bg);
+    box-shadow: 10px 0 20px fade(black, 50%);
+
+    background-image: url(/img/menu_bg_2.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &.sidebarWithWindow {
+        right: 100vw - @side-width-ext;
+    }
+}
+
+.banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 7rem;
+    background-color: var(--banner-bg);
+    box-shadow: 10px 0 20px fade(black, 50%);
+}
